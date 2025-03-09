@@ -2,7 +2,7 @@
 	"id": "hot-reload",
 	"name": "Hot Reload",
 	"version": "1.0.0",
-	"min-app-version": "1.0.0",
+	"minAppVersion": "1.0.0",
 	"description": "Automatically reload the app when watched files change",
 	"author": "Ethan Gunter",
 	"authorUrl": "https://github.com/ethan-gunter/obsidian-hot-reload",
