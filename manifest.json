@@ -1,0 +1,11 @@
+{
+	"id": "hot-reload",
+	"name": "Hot Reload",
+	"version": "1.0.0",
+	"minAppVersion": "1.1.0",
+	"description": "Automatically reload Obsidian when watched files change - perfect for plugin/theme developers",
+	"author": "Ethan Gunter",
+	"authorUrl": "https://github.com/ethan-gunter/obsidian-hot-reload",
+	"isDesktopOnly": true,
+	"fundingUrl": "https://ko-fi.com/ethangunter"
+}
