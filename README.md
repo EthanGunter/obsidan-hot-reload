@@ -6,7 +6,6 @@ Essential for plugin developers and theme designers needing instant feedback.
 ## Features
 - 🕵️ Watch individual files or entire directories
 - 🔄 Automatic app reload on changes
-- 🧹 Memory-safe watcher cleanup
 - ⚙️ Simple path configuration
 
 ## Installation
@@ -17,6 +16,9 @@ Essential for plugin developers and theme designers needing instant feedback.
    - `src/` - watch directory (non-recursive)
    - `styles/*` - recursive glob pattern
 4. Get to work!
+
+## File System Access
+This plugin monitors files outside your Obsidian vault and requires direct filesystem access. This access is read-only, and no file will ever be modified by this plugin.
 
 ## License
 MIT - See [LICENSE](./LICENSE)

@@ -1,4 +1,4 @@
-import { App, Plugin, PluginSettingTab, Setting, WorkspaceLeaf, moment } from "obsidian";
+import { App, Plugin, PluginSettingTab, Setting } from "obsidian";
 import { watch, existsSync, type FSWatcher } from "fs";
 
 const DEFAULT_SETTINGS = {
@@ -28,9 +28,7 @@ export default class HotReloadPlugin extends Plugin {
                         // Close watchers before reloading
                         this.clearWatchers();
                         // Add slight delay to ensure cleanup completes
-                        setTimeout(() => {
-                            (this.app as any).commands.executeCommandById('app:reload');
-                        }, 100);
+                        (this.app as any).commands.executeCommandById('app:reload');
                     }
                 });
                 this.watchers.push(watcher);
@@ -105,19 +103,17 @@ export class HotReloadSettingsTab extends PluginSettingTab {
     }
 }
 
-declare global {
-    interface Window {
-        app?: any;
-    }
-}
-
 function validatePathString(value: string): { paths: string[], errors?: string[] } {
     const paths = value.split(",").map(x => x.trim()).filter(x => x.length > 0);
     const errors: string[] = [];
 
     for (const path of paths) {
-        if (!existsSync(path.replace("/*", "/"))) {
-            errors.push(`Path does not exist: ${path}`);
+        try {
+            if (!existsSync(path.replace("/*", "/"))) {
+                errors.push(`Path does not exist: ${path}`);
+            }
+        } catch (e) {
+            errors.push(`Error checking path: ${path}; ${e}`);
         }
     }
     return { paths, errors: errors.length > 0 ? errors : undefined };
