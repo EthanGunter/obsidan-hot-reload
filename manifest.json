@@ -5,7 +5,7 @@
 	"minAppVersion": "1.0.0",
 	"description": "Automatically reload the app when watched files change",
 	"author": "Ethan Gunter",
-	"authorUrl": "https://github.com/ethan-gunter/obsidian-hot-reload",
+	"authorUrl": "https://github.com/ethangunter/obsidian-hot-reload",
 	"isDesktopOnly": true,
 	"fundingUrl": "https://ko-fi.com/ethangunter"
 }
